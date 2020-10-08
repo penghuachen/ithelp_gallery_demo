@@ -9,6 +9,7 @@ const AppDiv = styled.div`
 function App() {
   return (
     <AppDiv>
+      <Header />
     </AppDiv>
   );
 }
