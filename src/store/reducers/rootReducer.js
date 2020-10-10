@@ -1,7 +1,15 @@
 const initialState = {
-  list: [1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8]
+  list: []
 };
 
 export const rootReducer = (state = initialState, action) => {
-  return state;
+  switch(action.type) {
+    case 'FETCH_UNSPLASH_API': 
+      return {
+        ...state,
+        list: action.payload
+      }
+    default:
+      return state;
+  }
 };
