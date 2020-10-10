@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { useSelector } from 'react-redux';
 import img from '../../assets/img/bg.jpg';
 
 const GalleryContainerDiv = styled.div``;
@@ -19,14 +19,16 @@ const GalleryImg  = styled.img`
 
 
 const GalleryList = () => {
+  const list = useSelector(state => state.list);
   return(
     <GalleryContainerDiv>
-      
-      { [1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8].map(() => (
-        <GalleryItem>
-          <GalleryImg src={ img } alt="img"/>
-        </GalleryItem>
-      ))}
+      {
+        list.map(() => (
+          <GalleryItem>
+            <GalleryImg src={ img } alt="img"/>
+          </GalleryItem>
+        ))
+      }
     </GalleryContainerDiv>
   )
 };
