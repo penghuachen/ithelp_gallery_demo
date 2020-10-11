@@ -8,8 +8,7 @@ function* fetchUnplashAPI() {
       per_page: 20
     }
   }); 
-  console.log(data);
-  
+
   yield put({
     type: 'FETCH_UNSPLASH_API',
     payload: data

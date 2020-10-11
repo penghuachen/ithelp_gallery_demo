@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { Suspense } from 'react';
+import {
+  Switch,
+  Route,
+  Redirect
+} from 'react-router-dom';
 import styled from 'styled-components';
 import Header from './components/Header';
-import GalleryList from './components/GalleryList';
+import GalleryList from './containers/GalleryList';
+import Info from './containers/Info';
 import Footer from './components/Footer';
 
 const AppDiv = styled.div`
@@ -10,11 +16,17 @@ const AppDiv = styled.div`
 
 function App() {
   return (
-    <AppDiv>
-      <Header />
-      <GalleryList />
-      <Footer />
-    </AppDiv>
+    <Suspense fallback={ <div></div> }>
+      <AppDiv>
+        <Header />
+        <Switch>
+          <Route path="/info/:id" component={() => (<Info />) } />
+          <Route path="/gallerylist" component={() => (<GalleryList />) } />
+          <Redirect to="/gallerylist" />
+        </Switch>
+        <Footer />
+      </AppDiv>
+    </Suspense>
   );
 }
 

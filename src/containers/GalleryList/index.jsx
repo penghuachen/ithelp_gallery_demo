@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
-
+import { useHistory } from "react-router-dom";
 const GalleryContainerDiv = styled.div``;
 const GalleryItem = styled.div`
   display: inline-block;
@@ -21,6 +21,7 @@ const GalleryBgImg  = styled.div`
 
 
 const GalleryList = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const list = useSelector(state => state.list);
 
@@ -32,7 +33,12 @@ const GalleryList = () => {
     <GalleryContainerDiv>
       {
         list.map(item => (
-          <GalleryItem key={ item.id }>
+          <GalleryItem 
+            key={ item.id } 
+            onClick={ () => { 
+              history.push(`/info/${item.id}`);
+            }}
+          >
             <GalleryBgImg url={ item.urls.regular } />
           </GalleryItem>
         ))
