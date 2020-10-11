@@ -5,7 +5,7 @@ import img from '../../assets/img/icon-image.svg';
 
 
 const HeaderDiv = styled.div`
-  background: #2ECC40;
+  background: #90B44B;
   padding: 10px 15px;
 `;
 

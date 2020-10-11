@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const FooterDiv = styled.div`
   text-align: center;
-  background: #2ECC40;
+  background: #90B44B;
   padding: 10px 15px;
   font-size: 20px;
 `;

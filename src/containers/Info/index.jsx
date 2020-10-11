@@ -18,7 +18,9 @@ const InfoBgImage = styled.div`
 
 const InfoDetails = styled.div`
   width: 50%;
-  padding: 0 40px;
+  height: 100%;
+  background: #FCFAF2;
+  padding: 40px;
   display: inline-block;
   vertical-align: middle;
 `;
