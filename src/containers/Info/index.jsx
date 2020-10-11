@@ -24,6 +24,7 @@ const InfoDetails = styled.div`
 `;
 
 const BaseInfo = styled.div`
+  margin-bottom: 20px;
   >p {
     margin: 5px 10px;
   }
