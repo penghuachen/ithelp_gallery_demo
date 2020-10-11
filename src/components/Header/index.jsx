@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import img from '../../assets/img/icon-image.svg';
 
@@ -19,13 +20,17 @@ const HeaderSpan = styled.span`
   vertical-align: middle;
 `;
 
-const HeaderH1 = styled.h1``;
+const HeaderH1 = styled.h1`
+  display: inline-block;
+  cursor: pointer;
+`;
 
 
 const Header = () => {
+  const history = useHistory();
   return (
     <HeaderDiv>
-      <HeaderH1>
+      <HeaderH1 onClick={ () => { history.push('/galleryList') } }>
         <HeaderImg src={ img } alt="icon" />
         <HeaderSpan>
           FLUID GALLERY
