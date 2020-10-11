@@ -37,6 +37,7 @@ const GalleryList = () => {
             key={ item.id } 
             onClick={ () => { 
               history.push(`/info/${item.id}`);
+              dispatch({ type: 'SAGA_FETCH_UNSPLASH_INFO_API', id: item.id });
             }}
           >
             <GalleryBgImg url={ item.urls.regular } />
